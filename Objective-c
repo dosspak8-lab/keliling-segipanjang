@@ -1,0 +1,31 @@
+#import <Foundation/Foundation.h>
+#include <stdio.h>
+
+int main(int argc, const char * argv[]) {
+    @autoreleasepool {
+        int pil;
+        float p, l;
+
+        printf("1. Hitung Luas\n2. Hitung Keliling\nPilih (1/2): ");
+        fflush(stdout); // Memaksa teks keluar sebelum minta input
+        if (scanf(" %d", &pil) != 1) return 0;
+
+        printf("Masukkan Panjang: ");
+        fflush(stdout);
+        scanf(" %f", &p);
+
+        printf("Masukkan Lebar: ");
+        fflush(stdout);
+        scanf(" %f", &l);
+
+        // Selection (Pemilihan)
+        if (pil == 1) {
+            printf("Hasil Luas: %.2f\n", p * l);
+        } else if (pil == 2) {
+            printf("Hasil Keliling: %.2f\n", 2 * (p + l));
+        } else {
+            printf("Pilihan salah!\n");
+        }
+    }
+    return 0;
+}
