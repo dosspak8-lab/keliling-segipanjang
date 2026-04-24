@@ -1,0 +1,10 @@
+#include <stdio.h>
+int main() {
+    int pil; float p, l;
+    printf("1.Luas 2.Keliling\nPilih: "); scanf("%d", &pil);
+    printf("Panjang & Lebar: "); scanf("%f %f", &p, &l);
+    if(pil == 1) printf("Luas: %.2f", p*l);
+    else if(pil == 2) printf("Keliling: %.2f", 2*(p+l));
+    else printf("Salah input");
+    return 0;
+}
