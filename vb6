@@ -1,0 +1,38 @@
+Imports System
+
+Module RectangleCalc
+    Sub Main()
+        ' Deklarasi Variabel
+        Dim pilihan As Integer
+        Dim p, l, hasil As Double
+
+        Console.WriteLine("=== MENU PERSEGI PANJANG ===")
+        Console.WriteLine("1. Hitung Luas")
+        Console.WriteLine("2. Hitung Keliling")
+        Console.Write("Pilih (1/2): ")
+        
+        ' Membaca Pilihan Menu
+        If Integer.TryParse(Console.ReadLine(), pilihan) Then
+            ' Selection (Pemilihan)
+            If pilihan = 1 Or pilihan = 2 Then
+                Console.Write("Masukkan Panjang: ")
+                p = Val(Console.ReadLine())
+                
+                Console.Write("Masukkan Lebar: ")
+                l = Val(Console.ReadLine())
+
+                If pilihan = 1 Then
+                    hasil = p * l
+                    Console.WriteLine("Hasil Luas: " & hasil)
+                Else
+                    hasil = 2 * (p + l)
+                    Console.WriteLine("Hasil Keliling: " & hasil)
+                End If
+            Else
+                Console.WriteLine("Error: Pilihan hanya 1 atau 2!")
+            End If
+        Else
+            Console.WriteLine("Error: Input harus angka!")
+        End If
+    End Sub
+End Module
