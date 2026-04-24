@@ -1,0 +1,40 @@
+import java.util.Scanner
+
+fun main() {
+    // Menggunakan Scanner supaya lebih stabil membaca input angka
+    val input = Scanner(System.`in`)
+
+    println("=== Menu Persegi Panjang ===")
+    println("1. Hitung Luas")
+    println("2. Hitung Keliling")
+    print("Pilih (1/2): ")
+
+    // Selection untuk validasi apakah inputnya angka
+    if (!input.hasNextInt()) {
+        println("Error: Input harus berupa angka!")
+        return
+    }
+
+    val pil = input.nextInt()
+
+    if (pil == 1 || pil == 2) {
+        print("Masukkan Panjang: ")
+        val p = input.nextDouble()
+        print("Masukkan Lebar: ")
+        val l = input.nextDouble()
+
+        // Selection menggunakan 'when' (fitur keren Kotlin pengganti switch-case)
+        when (pil) {
+            1 -> {
+                val luas = p * l
+                println("Hasil Luas: $luas")
+            }
+            2 -> {
+                val keliling = 2 * (p + l)
+                println("Hasil Keliling: $keliling")
+            }
+        }
+    } else {
+        println("Error: Pilihan cuma ada 1 atau 2!")
+    }
+}
