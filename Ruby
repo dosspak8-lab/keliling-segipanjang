@@ -1,0 +1,22 @@
+# Menggunakan $stdin.gets agar pasti membaca dari input pengguna
+puts "1. Hitung Luas"
+puts "2. Hitung Keliling"
+print "Pilihan (1/2): "
+pil = $stdin.gets.to_s.strip
+
+print "Masukkan Panjang: "
+p = $stdin.gets.to_f
+
+print "Masukkan Lebar: "
+l = $stdin.gets.to_f
+
+# Pemilihan (Selection)
+if pil == "1"
+  hasil = p * l
+  puts "Hasil Luas: #{hasil}"
+elsif pil == "2"
+  hasil = 2 * (p + l)
+  puts "Hasil Keliling: #{hasil}"
+else
+  puts "Pilihan tidak valid!"
+end
