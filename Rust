@@ -1,0 +1,37 @@
+use std::io::{self, Write};
+
+fn main() {
+    // 1. Membaca Pilihan Menu
+    println!("1. Hitung Luas\n2. Hitung Keliling");
+    print!("Pilih (1/2): ");
+    io::stdout().flush().unwrap(); // Memastikan teks muncul
+
+    let mut input_pil = String::new();
+    io::stdin().read_line(&mut input_pil).expect("Gagal membaca");
+    let pil = input_pil.trim();
+
+    // 2. Membaca Panjang
+    print!("Masukkan Panjang: ");
+    io::stdout().flush().unwrap();
+    let mut input_p = String::new();
+    io::stdin().read_line(&mut input_p).expect("Gagal membaca");
+    let p: f64 = input_p.trim().parse().unwrap_or(0.0);
+
+    // 3. Membaca Lebar
+    print!("Masukkan Lebar: ");
+    io::stdout().flush().unwrap();
+    let mut input_l = String::new();
+    io::stdin().read_line(&mut input_l).expect("Gagal membaca");
+    let l: f64 = input_l.trim().parse().unwrap_or(0.0);
+
+    // 4. Struktur Pemilihan (Selection)
+    if pil == "1" {
+        let luas = p * l;
+        println!("Hasil Luas: {:.2}", luas);
+    } else if pil == "2" {
+        let keliling = 2.0 * (p + l);
+        println!("Hasil Keliling: {:.2}", keliling);
+    } else {
+        println!("Pilihan tidak valid!");
+    }
+}
