@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int pilihan;
+    float p, l, hasil;
+
+    cout << "=== Kalkulator Persegi Panjang ===\n";
+    cout << "1. Hitung Luas\n2. Hitung Keliling\nPilih: ";
+    cin >> pilihan;
+
+    if (pilihan == 1 || pilihan == 2) {
+        cout << "Masukkan Panjang: "; cin >> p;
+        cout << "Masukkan Lebar: "; cin >> l;
+
+        // Pemilihan dengan Switch
+        switch(pilihan) {
+            case 1:
+                hasil = p * l;
+                cout << "Luas: " << hasil << endl;
+                break;
+            case 2:
+                hasil = 2 * (p + l);
+                cout << "Keliling: " << hasil << endl;
+                break;
+        }
+    } else {
+        cout << "Input salah!";
+    }
+
+    return 0;
+}
