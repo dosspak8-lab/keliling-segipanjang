@@ -1,0 +1,16 @@
+print("1. Luas\n2. Keliling")
+io.write("Pilih: ")
+local pil = io.read()
+
+io.write("Panjang: ")
+local p = tonumber(io.read())
+io.write("Lebar: ")
+local l = tonumber(io.read())
+
+if pil == "1" then
+    print("Hasil Luas: " .. (p * l))
+elseif pil == "2" then
+    print("Hasil Keliling: " .. (2 * (p + l)))
+else
+    print("Pilihan salah")
+end
