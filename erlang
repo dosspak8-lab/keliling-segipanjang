@@ -1,0 +1,20 @@
+-module(main).
+-export([start/0]).
+
+start() ->
+    % Simulasi input di Erlang (biasanya melalui shell)
+    {ok, [Pil]} = io:fread("Pilih (1.Luas/2.Keliling): ", "~d"),
+    {ok, [P]} = io:fread("Panjang: ", "~f"),
+    {ok, [L]} = io:fread("Lebar: ", "~f"),
+
+    % Struktur Pemilihan (Selection)
+    case Pil of
+        1 -> 
+            Luas = P * L,
+            io:format("Hasil Luas: ~p~n", [Luas]);
+        2 -> 
+            Keliling = 2 * (P + L),
+            io:format("Hasil Keliling: ~p~n", [Keliling]);
+        _ -> 
+            io:format("Pilihan Salah!~n")
+    end.
